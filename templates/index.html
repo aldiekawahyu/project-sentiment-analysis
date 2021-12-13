@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+        href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css"
+        rel="stylesheet"
+    />
+    <title>Mandalika Sentiment Analysis</title>
+</head>
+<body>
+    <section
+        class="
+            flex
+            justify-center
+            items-center
+            w-screen
+            h-screen
+            bg-indigo-500
+        "
+    >
+        <main
+            class="
+                flex flex-col
+                justify-center
+                items-center
+                p-16
+                bg-white
+                rounded-lg
+            "
+        >
+            <h1 class="text-4x2 text-bold"><strong>Sentiment Classifier</strong></h1>
+
+            <img src="https://editor.analyticsvidhya.com/uploads/50131cover.jpg"
+                 alt="Sentiment analysis emoticon" style="width:450px;height:250px;">
+
+            <form method="POST">
+                <label for="input_text">Masukkan teks: </label><br>
+                <input type="text" id="input_text" name="input_text" size="50"><br>
+
+                {% if sentiment == 'Negative' %}
+                    <img src=".\static\uploads\negative.png" style="width:75px;height:75px;" class="center">
+                {% elif sentiment == 'Neutral' %}
+                    <img src=".\static\uploads\neutral.png" style="width:75px;height:75px;" class="center">
+                {% elif sentiment == 'Positive' %}
+                    <img src=".\static\uploads\positive.png" style="width:75px;height:75px;" class="center">
+                {% else %}
+                    <br></br>
+                {% endif %}
+
+                <button
+                    type="submit"
+                    class="p-2 bg-indigo-500 text-white rounded-md"
+                >
+                    Tampilkan sentiment
+                </button>
+            </form>
+        </main>
+    </section>
+</body>
+</html>
