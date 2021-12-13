@@ -1,1 +1,1 @@
-web: gunicorn sentiment-mandalika.wsgi
+web: gunicorn app:app
