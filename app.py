@@ -3,13 +3,11 @@ from tensorflow.keras.models import load_model
 from tensorflow.keras.preprocessing.sequence import pad_sequences
 import pickle
 import numpy as np
-# import pandas as pd
 import googletrans
 import os
 
 
 app = Flask(__name__)
-# app.config['UPLOAD_FOLDER'] = './static/uploads/'
 model = load_model('model.h5')
 vars = 'vars.pkl'
 translator = googletrans.Translator()
@@ -47,11 +45,6 @@ def index():
             return render_template('index.html', sentiment=sentiment)
 
     return render_template('index.html')
-
-
-# @app.route('/display/<filename>')
-# def send_uploaded_image(filename=''):
-#     return send_from_directory(app.config['UPLOAD_FOLDER'], filename)
 
 
 if __name__ == '__main__':
